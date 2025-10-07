@@ -1,0 +1,253 @@
+/* Global & General */
+
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+
+    --font-regular: "Karla", Helvetica, Arial, sans-serif;
+    --font-mono: Consolas, monospace;
+    --font-brand-highlight: "Lora", Helvetica, Arial, sans-serif;
+
+    --clr-background-1: #032B64;
+    --clr-background-2: #0046A8;
+    --clr-font-primary: #fff;
+    --clr-font-secondary: #b0b8c1;
+    --clr-surface-light: #032b64b0;
+    --clr-surface-light-border: #01204bb0;
+    --clr-surface-primary: #109bf852;
+    --clr-surface-primary-border: #3fe6fcb7;
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(90deg, var(--clr-background-1) 0%, var(--clr-background-2) 100%);
+    color: var(--clr-font-primary);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: var(--font-regular);
+}
+
+/* Top Bar */
+
+#top-bar {
+    width: 85%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 100px auto auto auto;
+}
+
+#top-bar>aside {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: .75rem;
+}
+
+#top-bar>aside>a>img {
+    width: auto;
+    height: 50px;
+}
+
+#top-bar>aside>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2.5px;
+}
+
+#top-bar>aside>div>h1 {
+    font-size: 2rem;
+}
+
+#top-bar>aside>div>h1:first-of-type {
+    font-family: var(--font-brand-highlight);
+}
+
+#top-bar>aside>div>h1:last-of-type {
+    font-weight: 500;
+}
+
+#top-bar>nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+#top-bar>nav>button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-surface-light);
+    border: 2px solid var(--clr-surface-light-border);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+}
+
+#top-bar>nav>button>span {
+    color: var(--clr-font-primary);
+    font-size: 1.35rem;
+}
+
+/* Main  UI */
+
+main {
+    width: 85%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-ui {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: unset;
+    align-items: stretch;
+    flex-direction: row;
+    margin-top: 3.5rem;
+}
+
+#main-ui>aside {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#main-ui>aside>button {
+    width: 85%;
+    height: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--clr-surface-primary);
+    border: 3.5px solid var(--clr-surface-primary-border);
+    border-radius: 30px;
+    color: var(--clr-font-primary);
+}
+
+#main-ui>aside>button:first-of-type {
+    margin-bottom: 1rem;
+}
+
+#main-ui>aside>button>span {
+    font-size: 3rem;
+}
+
+#main-ui>aside>button>h1 {
+    font-size: 1.35rem;
+    font-family: var(--font-mono);
+    margin: .75rem 0 .75rem 0;
+}
+
+#main-ui>aside>button>p {
+    width: 85%;
+    margin: 0;
+    color: var(--clr-font-secondary);
+    font-weight: 500;
+}
+
+#main-ui>aside>button:last-of-type>h1 {
+    margin-top: .35rem;
+}
+
+#main-ui>div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-surface-primary);
+    border: 3.5px dashed var(--clr-surface-primary-border);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+}
+
+#main-ui .default-center-wrapper {
+    width: auto;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main-ui .default-center-wrapper>span {
+    font-size: 4.85rem;
+}
+
+#main-ui .default-center-wrapper>h1 {
+    font-size: 2rem;
+    font-family: var(--font-mono);
+    margin: 1rem 0 1rem 0;
+}
+
+#main-ui .default-center-wrapper>p {
+    width: 65%;
+    margin: 0;
+    text-align: center;
+    color: var(--clr-font-secondary);
+    font-weight: 500;
+}
+
+#main-ui>section {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#main-ui>section>div {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--clr-surface-primary);
+    border: 3.5px solid var(--clr-surface-primary-border);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+}
+
+#main-ui>section>div>div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+}
+
+#main-ui>section span {
+    font-size: 2.5rem;
+}
+
+#main-ui>section p {
+    width: 85%;
+    text-align: center;
+    font-weight: 500;
+    color: var(--clr-font-secondary);
+}
