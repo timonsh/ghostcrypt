@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="WebByte Studio">
+    <title>GhostCrypt - Verschlüssel & Entschlüssel Dateien kostenlos und sicher</title>
+
+    <link rel="icon" type="image/png" href="./src/assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="./src/assets/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="GhostCrypt" />
+    <link rel="manifest" href="./site.webmanifest" />
+
+    <link rel="stylesheet" type="text/css" href="./src/css/@font-face.css">
+    <link rel="stylesheet" type="text/css" href="./src/import/google-material-icons.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css">
+    <script src="./ghostcrypt-v1/ghostcrypt-v1-bundle.min.js" defer></script>
+    <script src="./src/js/main.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <a href="./index.html">
+            <img src="./src/assets/img/app-icon/app-icon.svg" alt="App Icon GhostCrypt">
+            <img src="./src/assets/img/ghostcrypt-text.png" alt="GhostCrypt">
+        </a>
+    </header>
+
+    <!-- Main Container -->
+    <main id="ui">
+
+        <!-- Upload Section -->
+        <section id="upload-file">
+            <h1>What is <strong>GhostCrypt</strong> ?</h1>
+            <p>
+                Your files transform into ghosts — invisible to everyone but you. GhostCrypt wraps your data in
+                military-grade encryption, turning it into a cryptic phantom that only you can bring back to life. No
+                servers, no tracking, just pure cryptographic magic that happens right in your browser. Your secrets
+                stay yours. 👻🔒
+                <br>
+                Make sure to always use strong passwords and if you're using keyfiles, store them very safely.
+            </p>
+
+            <div class="row">
+                <div>
+                    <span class="material-icon">description</span>
+                    <h2>Any File</h2>
+                    <p>All filetypes and filesizes are supported.</p>
+                </div>
+                <div>
+                    <span class="material-icon">password</span>
+                    <h2>Password or Keyfile</h2>
+                    <p>Type a password or generate a random keyfile</p>
+                </div>
+                <div>
+                    <span class="material-icon">encrypted</span>
+                    <h2>Ghost</h2>
+                    <p>Secure Encrypted Ghost-File</p>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="upload-btn" class="btn-primary" onclick="fileUpload()">
+                    <span class="material-icon">file_upload</span>
+                    <div class="btn-content">
+                        <span class="btn-text">Encrypt & Decrypt Files</span>
+                        <span class="btn-subtext">Click to select a file</span>
+                    </div>
+                </button>
+
+                <button id="github-btn" class="btn-secondary">
+                    <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span class="btn-text">View on GitHub</span>
+                </button>
+                <button id="info-btn" class="btn-info">
+                    <span class="material-icon">info</span>
+                    <span class="btn-text">Learn More</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- File View Section -->
+        <section id="file-view" class="hidden">
+            <div class="file-card">
+                <div class="file-header">
+                    <div class="file-icon-container">
+                        <span class="material-icon file-type-icon" id="file-type-icon">description</span>
+                    </div>
+                    <div class="file-info">
+                        <h2 class="file-name" id="file-name">filename.txt</h2>
+                        <p class="file-size" id="file-size">0 KB</p>
+                    </div>
+                </div>
+
+                <div class="file-status">
+                    <div class="status-badge" id="status-badge">
+                        <span class="material-icon status-icon" id="status-icon">encrypted</span>
+                        <span class="status-text" id="status-text">Ghost File - Ready to Decrypt</span>
+                    </div>
+                </div>
+
+                <div class="file-details">
+                    <div class="detail-item">
+                        <span class="detail-label">File Type</span>
+                        <span class="detail-value" id="detail-type">Unknown</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Status</span>
+                        <span class="detail-value" id="detail-status">Encrypted</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Action</span>
+                        <span class="detail-value" id="detail-action">Decrypt</span>
+                    </div>
+                </div>
+
+                <div class="file-actions">
+                    <button id="process-btn" class="btn-process">
+                        <span class="material-icon">lock_open</span>
+                        <span class="btn-text">Decrypt File</span>
+                    </button>
+                    <button id="cancel-btn" class="btn-cancel">
+                        <span class="material-icon">close</span>
+                        <span class="btn-text">Cancel</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Auth Selection Section -->
+        <section id="auth-selection" class="hidden">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <span class="material-icon">vpn_key</span>
+                    <h2>Choose Authentication Method</h2>
+                    <p id="auth-subtitle">Select how you want to protect your file</p>
+                </div>
+
+                <div class="auth-options">
+                    <button class="auth-option" id="password-option">
+                        <span class="material-icon">password</span>
+                        <div class="option-content">
+                            <h3>Password</h3>
+                            <p>Use a strong password to secure your file</p>
+                        </div>
+                    </button>
+
+                    <button class="auth-option" id="keyfile-option">
+                        <span class="material-icon">key</span>
+                        <div class="option-content">
+                            <h3>Keyfile</h3>
+                            <p>Generate or use a keyfile for maximum security</p>
+                        </div>
+                    </button>
+                </div>
+
+                <button id="auth-back-btn" class="btn-back">
+                    <span class="material-icon">arrow_back</span>
+                    <span>Back</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Auth Input Section -->
+        <section id="auth-input" class="hidden">
+            <div class="input-card">
+                <div class="input-header">
+                    <span class="material-icon" id="input-icon">password</span>
+                    <h2 id="input-title">Enter Password</h2>
+                </div>
+
+                <div id="password-input-container" class="hidden">
+                    <div class="input-group">
+                        <input type="password" id="password-field" placeholder="Enter your password" />
+                        <button class="toggle-password" id="toggle-password">
+                            <span class="material-icon">visibility</span>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strength-fill"></div>
+                        </div>
+                        <span class="strength-text" id="strength-text">Enter a password</span>
+                    </div>
+                </div>
+
+                <div id="keyfile-input-container" class="hidden">
+                    <div class="keyfile-actions">
+                        <button class="btn-keyfile" id="generate-keyfile-btn">
+                            <span class="material-icon">auto_awesome</span>
+                            <span>Generate New Keyfile</span>
+                        </button>
+                        <button class="btn-keyfile" id="upload-keyfile-btn">
+                            <span class="material-icon">upload_file</span>
+                            <span>Upload Existing Keyfile</span>
+                        </button>
+                    </div>
+                    <div class="keyfile-status hidden" id="keyfile-status">
+                        <span class="material-icon">check_circle</span>
+                        <span id="keyfile-name">Keyfile loaded</span>
+                    </div>
+                </div>
+
+                <div class="input-actions">
+                    <button id="start-process-btn" class="btn-start" disabled>
+                        <span class="material-icon">play_arrow</span>
+                        <span id="start-btn-text">Start Encryption</span>
+                    </button>
+                    <button id="input-back-btn" class="btn-back">
+                        <span class="material-icon">arrow_back</span>
+                        <span>Back</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Processing Section -->
+        <section id="processing" class="hidden">
+            <div class="processing-card">
+                <div class="processing-header">
+                    <div class="processing-icon-container">
+                        <span class="material-icon processing-icon">sync</span>
+                    </div>
+                    <h2 id="processing-title">Encrypting File...</h2>
+                    <p id="processing-subtitle">Please wait while we secure your data</p>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-info">
+                        <span id="progress-percentage">0%</span>
+                        <span id="progress-status">Initializing...</span>
+                    </div>
+                </div>
+
+                <div class="processing-steps">
+                    <div class="step-item" data-step="1">
+                        <span class="material-icon step-icon">pending</span>
+                        <span class="step-text">Preparing file...</span>
+                    </div>
+                    <div class="step-item" data-step="2">
+                        <span class="material-icon step-icon">pending</span>
+                        <span class="step-text">Generating keys...</span>
+                    </div>
+                    <div class="step-item" data-step="3">
+                        <span class="material-icon step-icon">pending</span>
+                        <span class="step-text">Processing data...</span>
+                    </div>
+                    <div class="step-item" data-step="4">
+                        <span class="material-icon step-icon">pending</span>
+                        <span class="step-text">Finalizing...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Error Section -->
+        <section id="error" class="hidden">
+            <div class="error-card">
+                <div class="error-header">
+                    <div class="error-icon-container">
+                        <span class="material-icon error-icon">error</span>
+                    </div>
+                    <h2 id="error-title">Processing Failed</h2>
+                    <p id="error-message">The password or keyfile you provided is incorrect.</p>
+                </div>
+
+                <div class="error-actions">
+                    <button id="retry-btn" class="btn-primary">
+                        <span class="material-icon">refresh</span>
+                        <span>Try Again</span>
+                    </button>
+                    <button id="error-cancel-btn" class="btn-secondary">
+                        <span class="material-icon">close</span>
+                        <span>Cancel</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Complete Section -->
+        <section id="complete" class="hidden">
+            <div class="complete-card">
+                <div class="complete-header">
+                    <div class="success-icon-container">
+                        <span class="material-icon success-icon">check_circle</span>
+                    </div>
+                    <h2 id="complete-title">Encryption Complete!</h2>
+                    <p id="complete-subtitle">Your file has been successfully encrypted</p>
+                </div>
+
+                <div class="complete-summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Original File</span>
+                        <span class="summary-value" id="summary-original">filename.txt</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Output File</span>
+                        <span class="summary-value" id="summary-output">filename.ghost</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">File Size</span>
+                        <span class="summary-value" id="summary-size">1.2 MB</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Method</span>
+                        <span class="summary-value" id="summary-method">Password</span>
+                    </div>
+                </div>
+
+                <div class="complete-actions">
+                    <button id="download-btn" class="btn-download">
+                        <span class="material-icon">download</span>
+                        <span>Download File</span>
+                    </button>
+                    <button id="process-another-btn" class="btn-secondary-action">
+                        <span class="material-icon">refresh</span>
+                        <span>Process Another File</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
