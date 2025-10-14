@@ -1,7 +1,5 @@
 # 📖 GhostCrypt API Documentation
 
-> **Quick Reference** | For details see [CODE_STRUCTURE.md](CODE_STRUCTURE.md)
-
 ---
 
 ## `ghost()` - Main Function
@@ -368,16 +366,3 @@ const keyfile = await ghost('upload', 'keyfile');
 </body>
 </html>
 ```
-
----
-
-## License
-
-**GhostCrypt v1.0** © 2025 Timon Shani  
-All rights reserved. Proprietary software.
-
----
-
-**Made with 🖤 in Germany 🇩🇪**
-
-**GhostCrypt v1.0** - *Military-Grade Encryption* 👻🔒

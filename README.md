@@ -1,12 +1,15 @@
-# 👻 GhostCrypt v1.0
+# 👻 GhostCrypt v1
 
 **5-Layer Hybrid Encryption Protocol for Client-Side File Encryption**
 
-[![Security](https://img.shields.io/badge/Security-10.0%2F10-brightgreen)](CODE_STRUCTURE.md)
+[![Military Grade](https://img.shields.io/badge/Military_Grade-Security-brightgreen)](CODE_STRUCTURE.md)
 [![Encryption](https://img.shields.io/badge/Encryption-AES--256%20%2B%20ChaCha20-blue)](GHOST_API.md)
-[![Quantum](https://img.shields.io/badge/Quantum-128--bit%20Resistant-orange)](CODE_STRUCTURE.md)
+[![Pure JS](https://img.shields.io/badge/Pure-JavaScript-yellow)](GHOST_API.md)
+[![Protocol](https://img.shields.io/badge/Protocol-GHOST_1-blueviolet)](GHOST_API.md)
 
 > **Zero-Knowledge · Client-Side Only · No Server · Military-Grade**
+
+![GhostCrypt Application Screenshot](https://timonsh.github.io/ghostcrypt/src/assets/img/screenshot-preview.png)
 
 ---
 
@@ -15,10 +18,10 @@
 - ✅ **5-Layer Security** - Argon2id → AES-256 → ChaCha20 → HMAC → Binary
 - ✅ **Double Encryption** - AES-256-CBC + ChaCha20 (Defense in Depth)
 - ✅ **Military-Grade KDF** - Argon2id (64 MB, 3 iterations)
-- ✅ **Quantum-Aware** - 128-bit post-quantum security (~2040)
 - ✅ **Zero-Knowledge** - 100% client-side, no server
 - ✅ **Dual Auth** - Password OR Keyfile (.gkey)
-- ✅ **Minimal Overhead** - 130 bytes per file
+- ✅ **Simple Implementation** - Single JS file, plug & play
+- ❌ **File Support** - Up to 1 GB (hardware & browser dependent)
 
 ---
 
@@ -174,32 +177,21 @@ A: Defense in Depth. If one algorithm breaks, the other remains secure.
 
 ---
 
-##  License
+## 📜 License
 
-**GhostCrypt v1.0** © 2025 Timon Shani  
-All rights reserved. Proprietary software.
+**GhostCrypt v1.0** © 2025 WebByte Studio
+**Open Source & Free to Use**
 
-**For licensing inquiries:** [GitHub @timon-sh](https://github.com/timon-sh)
+This software is free and open source. You are free to:
+- ✅ Use it for personal or commercial projects
+- ✅ Modify and adapt the code
+- ✅ Distribute and share it
+- ✅ Build upon it for your own projects
 
----
-
-## 👨‍💻 Author
-
-**Timon Shani** - Security Engineer & Cryptography Enthusiast
-
-- 🌐 GitHub: [@timon-sh](https://github.com/timon-sh)
-- 🇩🇪 Made in Germany
+**No warranty provided. Use at your own risk.**
 
 ---
 
-## ⚠️ Disclaimer
-
-Provided "AS IS" without warranty. Authors not responsible for data loss or damages.
-
-**Use at your own risk. Always keep backups.**
-
----
-
-**Made with 🖤 in Germany 🇩🇪**
-
-**GhostCrypt v1.0** - *Because your privacy matters* 👻🔒
+<div align="center">
+  <img src="https://timonschroth.de/src/img/webbytestudio.svg" width="200" height="80">
+</div>
