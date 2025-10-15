@@ -5,7 +5,7 @@
     <!-- Main Page -->
     <url>
         <loc>https://timonsh.github.io/ghostcrypt/</loc>
-        <lastmod>2025-15-10</lastmod>
+    <lastmod>2025-10-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -18,7 +18,7 @@
     <!-- Legal Notice -->
     <url>
         <loc>https://timonsh.github.io/ghostcrypt/impressum.html</loc>
-        <lastmod>2025-15-10</lastmod>
+    <lastmod>2025-10-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
