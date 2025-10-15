@@ -5,7 +5,7 @@
     <!-- Main Page -->
     <url>
         <loc>https://timonsh.github.io/ghostcrypt/</loc>
-        <lastmod>2025-01-15</lastmod>
+        <lastmod>2025-15-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -18,31 +18,10 @@
     <!-- Legal Notice -->
     <url>
         <loc>https://timonsh.github.io/ghostcrypt/impressum.html</loc>
-        <lastmod>2025-01-15</lastmod>
+        <lastmod>2025-15-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
     
-    <!-- Documentation -->
-    <url>
-        <loc>https://timonsh.github.io/ghostcrypt/README.md</loc>
-        <lastmod>2025-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://timonsh.github.io/ghostcrypt/GHOST_API.md</loc>
-        <lastmod>2025-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://timonsh.github.io/ghostcrypt/CODE_STRUCTURE.md</loc>
-        <lastmod>2025-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
+    <!-- Add more HTML pages here if needed -->
 </urlset>
