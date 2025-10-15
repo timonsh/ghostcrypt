@@ -1,0 +1,9 @@
+# robots.txt for GhostCrypt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://timonsh.github.io/ghostcrypt/sitemap.xml
+
+# Crawl-delay (optional, for being nice to crawlers)
+Crawl-delay: 1
