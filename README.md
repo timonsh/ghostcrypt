@@ -9,7 +9,7 @@
 
 > **Zero-Knowledge · Client-Side Only · No Server · Military-Grade**
 
-![GhostCrypt Application Screenshot](https://timonsh.github.io/ghostcrypt/src/assets/img/screenshot-preview.png)
+![GhostCrypt Application Screenshot](https://ghostcrypt.app/src/assets/img/screenshot-preview.png)
 
 ---
 
